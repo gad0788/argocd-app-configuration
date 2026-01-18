@@ -2,18 +2,18 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: osca-python-app
-  namespace: argocd            # ArgoCD namespace
+  namespace: argocd
 spec:
   project: default
 
+  destination:
+    namespace: jec-test
+    server: https://kubernetes.default.svc
+
   source:
     repoURL: https://github.com/gad0788/argocd-app-configuration.git
-    targetRevision: HEAD       # or a tag/branch
     path: dev
-
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: jec-test
+    targetRevision: main
 
   syncPolicy:
     automated:
