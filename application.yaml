@@ -12,6 +12,7 @@ spec:
 
   source:
     repoURL: https://github.com/gad0788/argocd-app-configuration.git
+    targetRevision: HEAD       # or a tag/branch
     path: dev
     targetRevision: main
 
