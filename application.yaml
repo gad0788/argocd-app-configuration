@@ -7,14 +7,14 @@ spec:
   project: default
   # add the git repo where argo CD will connect to track and sync changes
   source:
-    repoURL: https://github.com/utrains/argocd-app-config.git
+    repoURL: https://github.com/gad0788/argocd-app-configuration.git
     targetRevision: HEAD
     # path totrack inside the repository
     path: dev
   # the destination could be the endpoint of K8s API server
   destination: 
     server: https://kubernetes.default.svc
-    namespace: myapp
+    namespace: utc-app
   # create a namespace specified in the destination cluster if it doesn't exist 
   syncPolicy:
     syncOptions:
